@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedAdmin() {
+      return isSignedIn() && 
+             (request.auth.token.email == 'bibis23.kor@gmail.com' && request.auth.token.email_verified == true);
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Validation for Project
+    function isValidProject(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.category in ['Video Content', 'AI Visuals', 'Brand Design'] &&
+             data.imageUrl is string && data.imageUrl.size() <= 1000 &&
+             data.createdAt == request.time;
+    }
+
+    // Validation for SiteSettings
+    function isValidSettings(data) {
+      return data.heroTitle is string && data.heroTitle.size() <= 200 &&
+             data.heroSubtitle is string && data.heroSubtitle.size() <= 500;
+    }
+
+    // Projects collection
+    match /projects/{projectId} {
+      allow read: if true; // Publicly viewable
+      allow create: if isVerifiedAdmin() && isValidProject(incoming());
+      allow update: if isVerifiedAdmin() && isValidProject(incoming()) && (
+        incoming().diff(existing()).affectedKeys().hasOnly(['title', 'description', 'category', 'imageUrl', 'videoUrl', 'order', 'updatedAt'])
+      );
+      allow delete: if isVerifiedAdmin();
+    }
+
+    // Settings collection
+    match /settings/global {
+      allow read: if true;
+      allow write: if isVerifiedAdmin() && isValidSettings(incoming());
+    }
+  }
+}

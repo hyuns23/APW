@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A portfolio project item for And Picture Works",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The name of the project"
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed explanation of the project"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Video Content", "AI Visuals", "Brand Design"],
+          "description": "The category the project belongs to"
+        },
+        "imageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URL to the representational image or video thumbnail"
+        },
+        "videoUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URL to the video content if applicable"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the project was added"
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order"
+        }
+      },
+      "required": ["title", "category", "imageUrl", "createdAt"]
+    },
+    "SiteSettings": {
+      "title": "Site Settings",
+      "description": "Global configuration for the website's text and style",
+      "type": "object",
+      "properties": {
+        "heroTitle": { "type": "string" },
+        "heroSubtitle": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "instagramUrl": { "type": "string" },
+        "youtubeUrl": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "projects": {
+      "schema": "Project",
+      "description": "Collection of portfolio projects"
+    },
+    "settings": {
+      "schema": "SiteSettings",
+      "description": "Global site settings document (id: 'global')"
+    }
+  }
+}

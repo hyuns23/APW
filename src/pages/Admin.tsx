@@ -234,7 +234,7 @@ const SettingsManager = () => {
       setSettings(s || {
         heroTitle: 'THE STORY NEVER ENDS.\nOUR IMAGINATION\nCONTINUES.',
         heroSubtitle: '앤드픽쳐웍스는 고도의 영상 기술과 인공지능, 그리고 감각적인 디자인을 결합하여 브랜드의 상상을 현실로 만듭니다.',
-        contactEmail: 'hello@andpicture.works',
+        contactEmail: 'young-ju@apw.ai.kr',
         instagramUrl: '',
         youtubeUrl: '',
         logoUrl: 'https://i.imgur.com/ICu5v4o.png'

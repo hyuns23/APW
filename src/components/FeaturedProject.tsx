@@ -9,10 +9,10 @@ interface FeaturedProjectProps {
 
 export const FeaturedProject = ({ title, youtubeId }: FeaturedProjectProps) => {
   const thumbnails = [
-    "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2525&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1542204172-3c1f81706f89?q=80&w=2574&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2659&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2670&auto=format&fit=crop"
+    "https://img.youtube.com/vi/yj83Vq-FFkk/hq1.jpg",
+    "https://img.youtube.com/vi/yj83Vq-FFkk/hq2.jpg",
+    "https://img.youtube.com/vi/yj83Vq-FFkk/hq3.jpg",
+    "https://img.youtube.com/vi/yj83Vq-FFkk/maxresdefault.jpg"
   ];
 
   return (

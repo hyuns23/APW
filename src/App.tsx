@@ -41,9 +41,15 @@ const ContactPage = () => {
         <h1 className="text-6xl font-black tracking-tighter mb-12">GET IN TOUCH</h1>
         <div className="max-w-2xl bg-neutral-900 border border-white/5 p-12">
           <p className="text-xl text-white/60 mb-12">새로운 프로젝트를 계획 중이신가요? 앤드픽쳐웍스가 귀하의 성공적인 비즈니스를 지원합니다.</p>
-          <div className="space-y-4">
-            <p className="text-sm font-bold text-brand-blue uppercase tracking-widest">Email</p>
-            <p className="text-2xl font-black">hello@andpicture.works</p>
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <p className="text-sm font-bold text-brand-blue uppercase tracking-widest">Email</p>
+              <p className="text-2xl font-black">young-ju@apw.ai.kr</p>
+            </div>
+            <div className="space-y-4">
+              <p className="text-sm font-bold text-brand-blue uppercase tracking-widest">Phone</p>
+              <p className="text-2xl font-black">032.223.4019</p>
+            </div>
           </div>
         </div>
       </div>

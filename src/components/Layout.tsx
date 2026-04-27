@@ -55,9 +55,6 @@ export const Header = ({ settings }: { settings: SiteSettings | null }) => {
               {item.name}
             </Link>
           ))}
-          <Link to="/contact" className="ml-4 px-6 py-2.5 text-[10px] font-bold tracking-widest border border-white/10 hover:border-brand-blue transition-all uppercase rounded-full">
-            START 
-          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -113,9 +110,10 @@ export const Footer = ({ settings }: { settings: SiteSettings | null }) => {
           <div className="md:col-span-3">
             <span className="text-[10px] font-bold tracking-[0.3em] text-white/20 uppercase mb-6 block">STUDIO</span>
             <p className="text-xs text-white/40 leading-relaxed">
-              Seoul, Republic of Korea<br/>
-              Songpa-gu, etc.<br/>
-              hello@andpicture.works
+              경기 부천시 원미구 부천로198번길 18<br/>
+              춘의테크노파크 2차 201동 505호 앤드픽처웍스<br/>
+              young-ju@apw.ai.kr<br/>
+              032.223.4019
             </p>
           </div>
           <div className="md:col-span-3">

@@ -40,7 +40,11 @@ const ContactPage = () => {
       <div className="py-32 px-6 max-w-7xl mx-auto">
         <h1 className="text-6xl font-black tracking-tighter mb-12">GET IN TOUCH</h1>
         <div className="max-w-2xl bg-neutral-900 border border-white/5 p-12">
-          <p className="text-xl text-white/60 mb-12">새로운 프로젝트를 계획 중이신가요? 앤드픽쳐웍스가 귀하의 성공적인 비즈니스를 지원합니다.</p>
+          <p className="text-xl text-white/60 mb-12">
+            새로운 프로젝트를 계획 중이신가요?<br />
+            앤드픽처웍스는 귀하의 성공적인 비즈니스를<br />
+            지원하는 파트너 입니다.
+          </p>
           <div className="space-y-8">
             <div className="space-y-4">
               <p className="text-sm font-bold text-brand-blue uppercase tracking-widest">Email</p>
